@@ -80,7 +80,8 @@ print ("START: predicting ratings (USER-USER) and NMAE")
 
 s1=[]
 error=[]
-for l in range(1, 20001):
+l = 1
+while l < 20001:
 	lines = f2.readline().split("\t")
 
 	x = int(lines[0])		#Uid
@@ -100,6 +101,7 @@ for l in range(1, 20001):
 		c=c+1
 
 	error.append(abs(r2-preR))
+	l += 1
 
 sum1 = sum(error)
 length = len(error)
